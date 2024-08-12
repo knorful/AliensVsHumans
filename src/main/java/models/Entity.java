@@ -12,8 +12,13 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Entity {
+    private String name;
     private int health;
     private int baseAttack;
     private List<Skill> skills;
     private List<Weapon> weapons;
+
+    private void increaseHealth(int amountToIncrease) {
+        this.health += amountToIncrease;
+    }
 }
