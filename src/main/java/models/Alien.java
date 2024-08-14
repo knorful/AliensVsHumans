@@ -10,20 +10,43 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 public class Alien extends Entity{
-    private static int fp = 10;
-    private static int maxHealth = 15;
-
-    private Boolean isMutated;
     private AlienRace race;
+    private int currentHealth;
+    private int currentFP;
+    private Boolean isMutated;
+
+    public Alien(AlienRace race) {
+        this.race = race;
+        this.currentHealth = race.getMaxHealth();
+        this.currentFP = race.getMaxFP();
+        this.isMutated = false;
+    }
 
     /*
     * This method will allow alien to regenerate if maxHealth is not full
-    * Regeneration will cause fp depletion of
+    * Regeneration will cause fp depletion
+    * args: takes in AlienRace race
     */
-    private String regenerateHealth() {
+    public String regenerateHealth(int regenerationAmount, int fpCost) {
         //TODO: write logic to have health max out at maxHealth and not let alien regenerate passed this limit
-        //check max health
-        return "This alien's current health is: " + this.getHealth();
+        if (this.currentFP - fpCost >= 0) {
+            if (this.currentHealth < race.getMaxHealth()) {
+                this.currentHealth = Math.min(regenerationAmount + this.currentHealth, race.getMaxHealth());
+                return "regenerateHealth casted. Current health is: " + this.currentHealth;
+            } else {
+                return "Health is already maxed!";
+            }
+        } else {
+            return "No enough FP to cast regenerateHeath!";
+        }
+    }
+
+    public String takeDamage(int damage) {
+        this.currentHealth -= damage;
+        if (this.currentHealth < 0) {
+            this.currentHealth = 0;
+        }
+        return "Current health is: " + this.currentHealth;
     }
 
     //TODO: Write logic for special skills and/or abilities based on alien race
