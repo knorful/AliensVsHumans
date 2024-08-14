@@ -11,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 public class Human extends Entity{
     private Boolean hasArmor;
-    private static int maxHealth = 50;
+    private static int maxHealth = 100;
 
     private void consumeFoodItem(Food food) {
         //write functionality to have Human consume food and be grated special effects
