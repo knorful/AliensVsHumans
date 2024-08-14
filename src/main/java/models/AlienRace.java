@@ -1,10 +1,14 @@
 package models;
 
+import lombok.Getter;
+
+@Getter
 public enum AlienRace {
     MARTIAN(100, 50, new String[]{"Telepathy", "Invisibility"}),
     VENUSIAN(120, 60, new String[]{"Flight", "Regeneration"}),
     JUPITERIAN(150, 40, new String[]{"Strength", "Resistance"});
 
+    // Getters
     private final int health;
     private final int focusPoints;
     private final String[] skills;
@@ -15,16 +19,4 @@ public enum AlienRace {
         this.skills = skills;
     }
 
-    // Getters
-    public int getHealth() {
-        return health;
-    }
-
-    public int getFocusPoints() {
-        return focusPoints;
-    }
-
-    public String[] getSkills() {
-        return skills;
-    }
 }
