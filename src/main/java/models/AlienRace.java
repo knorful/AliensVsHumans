@@ -9,13 +9,13 @@ public enum AlienRace {
     JUPITERIAN(150, 40, new String[]{"Strength", "Resistance"});
 
     // Getters
-    private final int health;
-    private final int focusPoints;
+    private final int maxHealth;
+    private final int maxFP;
     private final String[] skills;
 
-    AlienRace(int health, int fp, String[] skills) {
-        this.health = health;
-        this.focusPoints = fp;
+    AlienRace(int maxHealth, int maxFP, String[] skills) {
+        this.maxHealth = maxHealth;
+        this.maxFP = maxFP;
         this.skills = skills;
     }
 
