@@ -9,7 +9,7 @@ import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
-public class Alien extends Entity{
+public class Alien {
     private AlienRace race;
     private int currentHealth;
     private int currentFP;
@@ -37,16 +37,15 @@ public class Alien extends Entity{
                 return "Health is already maxed!";
             }
         } else {
-            return "No enough FP to cast regenerateHeath!";
+            return "Not enough FP to cast regenerateHeath!";
         }
     }
 
-    public String takeDamage(int damage) {
+    public void takeDamage(int damage) {
         this.currentHealth -= damage;
         if (this.currentHealth < 0) {
             this.currentHealth = 0;
         }
-        return "Current health is: " + this.currentHealth;
     }
 
     //TODO: Write logic for special skills and/or abilities based on alien race

@@ -9,7 +9,7 @@ import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
-public class Human extends Entity{
+public class Human {
     private Boolean hasArmor;
     private static int maxHealth = 100;
 
@@ -22,4 +22,8 @@ public class Human extends Entity{
         //write functionality to add armor to Human
         this.hasArmor = true;
     }
+
+//    private void increaseHealth(int amountToIncrease) {
+//        this.health += amountToIncrease;
+//    }
 }
