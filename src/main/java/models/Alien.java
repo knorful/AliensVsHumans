@@ -38,7 +38,7 @@ public class Alien {
                 return "Health is already maxed!";
             }
         } else {
-            return "Not enough FP to cast regenerateHeath!";
+            return "Not enough FP to cast regenerateHealth!";
         }
     }
 
