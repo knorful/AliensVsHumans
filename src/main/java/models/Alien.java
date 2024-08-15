@@ -15,6 +15,7 @@ public class Alien {
     private int currentFP;
     private Boolean isMutated;
 
+    //method that receives race of alien to set opponent for Human
     public Alien(AlienRace race) {
         this.race = race;
         this.currentHealth = race.getMaxHealth();
@@ -46,6 +47,10 @@ public class Alien {
         if (this.currentHealth < 0) {
             this.currentHealth = 0;
         }
+    }
+
+    public int dealDamage() {
+        return this.race.getAttackPower();
     }
 
     //TODO: Write logic for special skills and/or abilities based on alien race

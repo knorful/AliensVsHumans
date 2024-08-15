@@ -10,17 +10,34 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 public class Human {
+    private String name;
+    private int attackPower;
     private Boolean hasArmor;
-    private static int maxHealth = 100;
+    private int currentHealth;
 
     private void consumeFoodItem(Food food) {
-        //write functionality to have Human consume food and be grated special effects
-        //HP upgrade
-        //FP upgrade to cast spells
+        //TODO: write functionality to have Human consume food and be given special effects
+            //HP upgrade
+            //FP upgrade to cast spells
     }
     private void pickUpArmor(Armor armor) {
         //write functionality to add armor to Human
         this.hasArmor = true;
+    }
+
+    public int dealDamage() {
+        return this.getAttackPower();
+    }
+
+    public void takeDamage(int damage) {
+        if (this.hasArmor) {
+            damage -= 5;
+            System.out.println("Human armor equipped! Damage reduced by 5");
+        }
+        this.currentHealth -= damage;
+        if (this.currentHealth < 0) {
+            this.currentHealth = 0;
+        }
     }
 
 //    private void increaseHealth(int amountToIncrease) {
