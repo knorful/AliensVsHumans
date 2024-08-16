@@ -9,7 +9,7 @@ import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
-public class Alien {
+public class Alien extends Entity {
     private AlienRace race;
     private int currentHealth;
     private int currentFP;

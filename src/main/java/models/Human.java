@@ -9,26 +9,26 @@ import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
-public class Human {
+public class Human extends Entity {
     private String name;
-    private int attackPower;
     private Boolean hasArmor;
     private int currentHealth;
 
     private void consumeFoodItem(Food food) {
         //TODO: write functionality to have Human consume food and be given special effects
-            //HP upgrade
-            //FP upgrade to cast spells
+        //HP upgrade
+        //FP upgrade to cast spells
     }
+
     private void pickUpArmor(Armor armor) {
         //write functionality to add armor to Human
         this.hasArmor = true;
     }
 
-    public int dealDamage() {
-        return this.getAttackPower();
-    }
-
+    //    private void increaseHealth(int amountToIncrease) {
+//        this.health += amountToIncrease;
+//    }
+    @Override
     public void takeDamage(int damage) {
         if (this.hasArmor) {
             damage -= 5;
@@ -39,8 +39,4 @@ public class Human {
             this.currentHealth = 0;
         }
     }
-
-//    private void increaseHealth(int amountToIncrease) {
-//        this.health += amountToIncrease;
-//    }
 }
