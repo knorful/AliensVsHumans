@@ -7,15 +7,22 @@ import static org.junit.jupiter.api.Assertions.*;
 class AlienTest {
 
     private Alien martian;
+    private Alien venusian;
+    private Alien jupiterian;
 
     @BeforeEach
     void setUp() {
         martian = new Alien(AlienRace.MARTIAN);
+        venusian = new Alien(AlienRace.VENUSIAN);
+        jupiterian = new Alien(AlienRace.JUPITERIAN);
     }
 
     @Test
     void testInitialHealth() {
         assertEquals(100, martian.getCurrentHealth(), "Initial health should be 100 for a Martian");
+        assertEquals(120, venusian.getCurrentHealth(), "Initial health should be 120 for a Venusian");
+        assertEquals(150, jupiterian.getCurrentHealth(), "Initial health should be 120 for a Jupiterian");
+
     }
 
     @Test
